@@ -45,11 +45,7 @@ bot.set_my_name(
     
 @bot.message_handler(content_types=['voice'], chat_types=['private'])
 def voice(message: tb.types.Message):
-    """
-    Main voice handler, runs when a voice message is sent in a private chat.
-    """
-          
-    # # convert voice to text with whisper api
+
     file_info = bot.get_file(message.voice.file_id)
     downloaded_file = bot.download_file(file_info.file_path)
     data, sample_rate = sf.read(io.BytesIO(downloaded_file))
