@@ -1,0 +1,19 @@
+name: dante-podcasts-processed
+
+raw_data:
+  dataset_name: podcasts_raw
+  account_name:
+
+processing:
+  chunk_length: 15 # in seconds
+  remove_leading_silence: True
+  silence_threshold: -35
+  sample_rate: 16000
+  channels: 1
+  split_stems: False
+
+params:
+  num_workers: 24
+  batch_size: 128
+  logging_level: DEBUG
+  wandb: False
